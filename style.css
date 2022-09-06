@@ -1,0 +1,45 @@
+h1 {text-align: center;}
+h2 {background-color: rgb(21, 182, 128);}
+body {
+  /* background-image: repeating-linear-gradient(rgb(83, 131, 20), rgb(210, 138, 37));    */
+  background-color: rgb(32, 114, 87);
+}
+.wordGameF {
+  background-image: radial-gradient(rgb(32, 114, 87), rgb(32, 114, 87), rgba(96, 180, 204, 0.874),rgb(32, 114, 87),rgb(32, 114, 87), rgba(96, 180, 204, 0.874), rgb(32, 114, 87), rgb(32, 114, 87), rgba(96, 180, 204, 0.874), rgb(32, 114, 87), rgb(32, 114, 87), rgba(96, 180, 204, 0.874), rgb(32, 114, 87), rgb(32, 114, 87), rgba(96, 180, 204, 0.874), rgb(32, 114, 87), rgb(32, 114, 87), rgba(96, 180, 204, 0.874), rgb(32, 114, 87), rgb(32, 114, 87));
+  padding: 1em;
+  margin: 1em;
+  border-radius: 1em;
+  border: 0.3em solid;
+  width: 33%;
+  height: 24em;   
+}  
+.PhoneBillF {
+  background-image: radial-gradient(rgb(32, 114, 87), rgb(32, 114, 87), rgba(96, 180, 204, 0.874),rgb(32, 114, 87),rgb(32, 114, 87), rgba(96, 180, 204, 0.874), rgb(32, 114, 87), rgb(32, 114, 87), rgba(96, 180, 204, 0.874), rgb(32, 114, 87), rgb(32, 114, 87), rgba(96, 180, 204, 0.874), rgb(32, 114, 87), rgb(32, 114, 87), rgba(96, 180, 204, 0.874), rgb(32, 114, 87), rgb(32, 114, 87), rgba(96, 180, 204, 0.874), rgb(32, 114, 87), rgb(32, 114, 87));
+  padding: 1em;
+  margin: 1em;
+  border-radius: 1em;
+  border: 0.3em solid;
+  width: 33%;
+  height: 24em;   
+}
+.EnoughAirtimeF {
+  background-image: repeating-linear-gradient(rgb(32, 114, 87), rgb(32, 114, 87), rgb(32, 114, 87), rgba(165, 199, 209, 0.874),rgb(32, 114, 87),rgb(32, 114, 87));
+  padding: 1em;
+  margin: 1em;
+  border-radius: 1em;
+  border: 0.3em solid;
+  width: 33%;
+  height: 24em;   
+}
+.buttons {
+  background-color:rgb(141, 134, 31);
+  padding: 0.5em;
+}
+.buttons:hover{
+  background-color: chartreuse;
+}
+.returnStatement {
+  background-color: rgb(34, 227, 163);
+  padding: 0.5em;
+  margin: 1em; 
+}

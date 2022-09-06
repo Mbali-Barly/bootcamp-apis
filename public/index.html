@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js" integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- <script src="wordGame-Widget.js"></script>
+    <script src="//unpkg.com/alpinejs" defer></script> -->
+
+</head>
+
+<style>
+
+</style>
+
+<body>
+    <h1>My 3-Bootcamp APIs</h1>
+    <br><br>
+
+        <div class="" x-data="{
+            sentence : '',
+            longestWord:'',
+            shortestWord: '',
+            wordLength: '',
+
+            checkSentence() {
+                axios
+                   .get(`/api/word_game?sentence=${this.sentence}`)
+                   .then((result) => {
+
+                    this.longestWord = result.data.longestWord;
+                    this.shortestWord = result.data.shortestWord;
+                    this.wordLength = result.data.wordLength;
+                   console.log(result.data)
+                   })
+                },
+            
+            bill : '',
+            usage : '',
+    
+            totalUsage () {
+                axios
+                .get(`/api/totalPhoneBill?sentence=${this.sentence}`)
+                .then((result) => {
+
+                    this.bill = result.data.usage; 
+                    console.log(result.data) 
+                })  
+            },
+
+            airtimeUsage : '',
+            amountAvailable : '',
+            airtimeMessage : '',
+
+            calculate () {
+
+            },
+
+        }">
+
+        <div class="allWidgets">
+
+            <div class="wordGameF">
+                <h2>Word Game Widget API</h2>
+            
+                <textarea x-model="sentence" name="" id="" cols="27" rows="5"></textarea>
+                <br><br>
+                <div>
+                    <button class="buttons" @click="checkSentence">Check!</button>
+                </div>
+                <br>
+                <div class="returnStatement">
+                    longest word: <span x-text="longestWord"></span>
+                </div>
+                <div class="returnStatement">
+                    shortest word: <span x-text="shortestWord"></span>
+                </div>
+                <div class="returnStatement">
+                    word length: <span x-text="wordLength"></span>
+                </div>
+            </div>
+
+            <div class="PhoneBillF">
+                <h2>Total Phone Bill Widget</h2>
+
+                <textarea x-model="bill" name="" id="" cols="27" rows="5"></textarea>
+                <br><br>
+                <div>
+                    <button class="buttons" @click="totalUsage">Amount?</button>
+                </div>
+                <br>
+                <div class="returnStatement" x-text="usage" x-show="bill.length > 0">transport fee here:  
+                </div>  
+            </div>
+
+            <div class="EnoughAirtimeF">
+                <h2>Enough Airtime Widget</h2>
+            
+                <textarea x-model="airtimeUsage" name="" id="" cols="27" rows="5"></textarea>
+                <br>
+                <textarea x-model="amountAvailable" name="" id="" cols="27" rows="5"></textarea>         
+                <br><br>
+                <div>
+                    <button class="buttons" @click="calculate">Calculate!</button>
+                </div>
+                <br>
+                <div class="returnStatement" x-text="airtimeMessage">amount of airtime left:  
+                </div> 
+            </div>
+
+                
+
+        </div>
+            
+            
+
+            
+     </div>
+    
+</body>
+</html>
