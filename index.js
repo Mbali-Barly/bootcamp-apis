@@ -17,10 +17,18 @@ app.get("/api/word_game", function(req, res){
 });
 
 
-app.get("/api/phonebill/prices", function(req, res){
+// app.get("https://lit-reaches-49756.herokuapp.com/api/price_plans", function(req, res){
+  app.get("/api/totalPhoneBill", function(req, res){
   const bill = req.query.bill;
 res.json({
  "usage" : usage(bill)
+});
+});
+
+app.get("/api/enoughAirtime", function(req, res){
+  const airtimeUsage = req.query.airtimeUsage;
+res.json({
+ "amountAvailable" : amountAvailable(airtimeUsage)
 });
 });
 
