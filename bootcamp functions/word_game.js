@@ -1,4 +1,4 @@
-export default function longestWord(puzzle) {
+export const longestWord = function(puzzle) {
     let tsholo = puzzle.split(' ');
     var theLongestWord = 0;
     for (var i=0;i<tsholo.length;i++) {
@@ -15,27 +15,27 @@ export default function longestWord(puzzle) {
      return shad
    }
    
-  //   export default function shortestWord(puzzle) {
-  //   let tsholo = puzzle.split(' ');
-  //     var theShortestWord = tsholo[0];
+   export const shortestWord = function (puzzle) {
+    let tsholo = puzzle.split(' ');
+      var theShortestWord = tsholo[0];
      
-  //     for (var i=0;i<tsholo.length;i++) {
-  //     let mbali = tsholo[i].length;
+      for (var i=0;i<tsholo.length;i++) {
+      let mbali = tsholo[i].length;
         
-  //     if (mbali <= theShortestWord.length) 
-  //    {theShortestWord = tsholo[i];}  
-  //   }
-  //    return theShortestWord;
-  //  }
+      if (mbali <= theShortestWord.length) 
+     {theShortestWord = tsholo[i];}  
+    }
+     return theShortestWord;
+   }
    
-  //  export default function wordLengths(puzzle) {
-  //   var tsholo = puzzle.split(' ');
-  //  var thewordLengths = tsholo.map(a => a.length);
-  //    let total = 0;
-  //    for (var i=0;i<thewordLengths.length;i++) {
-  //      total += thewordLengths[i]
-  //    }
-  //    return total;
-  //  }
+   export const wordLength = function (puzzle) {
+    var tsholo = puzzle.split(' ');
+   var thewordLengths = tsholo.map(a => a.length);
+     let total = 0;
+     for (var i=0;i<thewordLengths.length;i++) {
+       total += thewordLengths[i]
+     }
+     return total;
+   }
      
    

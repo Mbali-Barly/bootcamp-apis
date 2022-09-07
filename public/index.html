@@ -45,7 +45,7 @@
     
             totalUsage () {
                 axios
-                .get(`/api/totalPhoneBill?sentence=${this.sentence}`)
+                .get(`/api/totalPhoneBill?bill=${this.bill}`)
                 .then((result) => {
 
                     this.bill = result.data.usage; 
