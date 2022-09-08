@@ -16,68 +16,14 @@
 
 <style>
 
-h1 {text-align: center;}
-h2 {
-    background-color: rgb(21, 182, 128);
-    text-align: center;}
-body {
-  /* background-image: repeating-linear-gradient(rgb(83, 131, 20), rgb(210, 138, 37));    */
-  background-color: rgb(55, 147, 116);
-}
-.allWidgets{
-    text-align: center;  
-}
-.wordGameF {
-  background-image: radial-gradient(rgb(32, 114, 87), rgb(32, 114, 87), rgba(96, 180, 204, 0.874),rgb(32, 114, 87),rgb(32, 114, 87), rgba(96, 180, 204, 0.874), rgb(32, 114, 87), rgb(32, 114, 87), rgba(96, 180, 204, 0.874), rgb(32, 114, 87), rgb(32, 114, 87), rgba(96, 180, 204, 0.874), rgb(32, 114, 87), rgb(32, 114, 87), rgba(96, 180, 204, 0.874), rgb(32, 114, 87), rgb(32, 114, 87), rgba(96, 180, 204, 0.874), rgb(32, 114, 87), rgb(32, 114, 87));
-  padding: 1em;
-  margin: 1em;
-  border-radius: 1em;
-  border: 0.4em solid;
-  width: 33%;
-  height: 24em;
-  margin-left: auto;
-  margin-right: auto;  
-}  
-.PhoneBillF {
-    background-image: repeating-linear-gradient(rgb(32, 114, 87), rgb(32, 114, 87), rgb(32, 114, 87), rgba(165, 199, 209, 0.874),rgb(32, 114, 87),rgb(32, 114, 87));
-  padding: 1em;
-  margin: 1em;
-  border-radius: 1em;
-  border: 0.4em solid;
-  width: 33%;
-  height: 24em;
-  margin-left: auto;
-  margin-right: auto;   
-}
-.EnoughAirtimeF {
-    background-image: radial-gradient(rgb(32, 114, 87), rgb(32, 114, 87), rgba(96, 180, 204, 0.874),rgb(32, 114, 87),rgb(32, 114, 87), rgba(96, 180, 204, 0.874), rgb(32, 114, 87), rgb(32, 114, 87), rgba(96, 180, 204, 0.874), rgb(32, 114, 87), rgb(32, 114, 87), rgba(96, 180, 204, 0.874), rgb(32, 114, 87), rgb(32, 114, 87), rgba(96, 180, 204, 0.874), rgb(32, 114, 87), rgb(32, 114, 87), rgba(96, 180, 204, 0.874), rgb(32, 114, 87), rgb(32, 114, 87));
-  padding: 1em;
-  margin: 1em;
-  border-radius: 1em;
-  border: 0.4em solid;
-  width: 33%;
-  height: 24em;
-  margin-left: auto;
-  margin-right: auto;   
-}
-.buttons {
-  background-color:rgb(141, 134, 31);
-  padding: 0.5em;
-}
-.buttons:hover{
-  background-color: chartreuse;
-}
-.returnStatement {
-  background-color: rgb(34, 227, 163);
-  padding: 0.5em;
-  margin: 1em; 
-}
+
 
 </style>
 
 <body>
     
     <h1>My Bootcamp APIs</h1>
+    
     <br>
 
         <div class="" x-data="{
@@ -100,14 +46,15 @@ body {
             
             bill : '',
             usage : '',
+        
     
             totalUsage () {
                 axios
                 .get(`/api/totalPhoneBill?bill=${this.bill}`)
                 .then((result) => {
 
-                    this.bill = result.data.usage; 
-                    console.log(result.data) 
+                    this.usage = result.data.usage; 
+                    console.log(result.data)
                 })  
             },
 
@@ -116,12 +63,12 @@ body {
             airtimeMessage : '',
 
             calculate () {
-
                 axios
-                .get(`/api/enoughAirtime?airtimeUsage=${this.airtimeUsage}`)
+                .get(`/api/enoughAirtime?airtimeUsage=${this.airtimeUsage}&amountAvailable=${this.amountAvailable}`)
                 .then((result) => {
 
-                 this.airtimeUsage = result.data.airtimeUsage  
+                 this.airtimeMessage = result.data.airtimeR;
+                 console.log(result.data)  
                 })
 
             },
@@ -160,8 +107,8 @@ body {
                 </div>
                 <br>
                 <div class="returnStatement">
-                   transport fee here: <span x-text="usage" x-show="bill.length > 0"></span>
-                </div>  
+                   total phone bill: <span x-text="usage" x-show="bill.length > 0"></span>
+                </div> 
             </div>
 <br>
             <div class="EnoughAirtimeF">
