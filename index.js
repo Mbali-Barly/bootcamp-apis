@@ -31,9 +31,7 @@ app.get("/api/enoughAirtime", function(req, res){
   const airtimeUsage = req.query.airtimeUsage;
   const amountAvailable = req.query.amountAvailable;
 res.json({
-//  "amountAvailable" : amountAvailable(airtimeUsage)
- "airtimeR" : enoughAirtime(airtimeUsage, amountAvailable)
-        
+ "airtimeR" : enoughAirtime(airtimeUsage, amountAvailable)    
 });
 });
 
